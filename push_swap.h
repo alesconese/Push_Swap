@@ -6,7 +6,7 @@
 /*   By: ade-tole <ade-tole@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:31:20 by ade-tole          #+#    #+#             */
-/*   Updated: 2023/11/26 23:28:08 by ade-tole         ###   ########.fr       */
+/*   Updated: 2023/11/28 14:11:06 by ade-tole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef	struct	s_node {
 	int		data;
 	int		index;
 	bool	upper_half;
+	int		push_price;
 	struct s_node	*target;
 	struct s_node	*next;
 	struct s_node	*prev;
