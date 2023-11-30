@@ -6,7 +6,7 @@
 /*   By: ade-tole <ade-tole@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:31:20 by ade-tole          #+#    #+#             */
-/*   Updated: 2023/11/28 14:11:06 by ade-tole         ###   ########.fr       */
+/*   Updated: 2023/11/30 19:12:46 by ade-tole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@
 # include <limits.h>
 # include <stdbool.h>
 
-typedef	struct	s_node {
-	int		data;
-	int		index;
-	bool	upper_half;
-	int		push_price;
+typedef struct s_node
+{
+	int				data;
+	int				index;
+	bool			upper_half;
+	int				push_price;
 	struct s_node	*target;
 	struct s_node	*next;
 	struct s_node	*prev;
@@ -37,6 +38,10 @@ int		ft_lstsize(t_node *stack);
 t_node	*ft_lstsmallest(t_node *stack);
 
 void	push_swap(t_node **a, t_node **b);
+
+void	sort_3(t_node **a);
+
+void	move_cheapest(t_node **a, t_node **b);
 
 void	sa(t_node **a);
 

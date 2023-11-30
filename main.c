@@ -6,7 +6,7 @@
 /*   By: ade-tole <ade-tole@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 19:29:16 by ade-tole          #+#    #+#             */
-/*   Updated: 2023/11/28 15:26:09 by ade-tole         ###   ########.fr       */
+/*   Updated: 2023/11/30 19:16:16 by ade-tole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 // test print list
 #include <stdio.h>
+
 void	print_stack(t_node **head)
 {
 	t_node	*current = *head;
@@ -25,7 +26,6 @@ void	print_stack(t_node **head)
 	}
 	printf("\n");
 }
-
 
 int	main(int argc, char **argv)
 {

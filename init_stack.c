@@ -6,7 +6,7 @@
 /*   By: ade-tole <ade-tole@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 21:45:25 by ade-tole          #+#    #+#             */
-/*   Updated: 2023/11/26 22:35:30 by ade-tole         ###   ########.fr       */
+/*   Updated: 2023/11/30 19:13:49 by ade-tole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_node	*init_stack(t_node **head, char **argv)
 	int		i;
 
 	i = 1;
-	while (argv[i])
+	while (argv[i++])
 	{
 		new_node = (t_node *)malloc(sizeof(t_node));
 		if (!new_node)
@@ -60,7 +60,6 @@ t_node	*init_stack(t_node **head, char **argv)
 			new_node->prev = prev_node;
 		}
 		prev_node = new_node;
-		i++;
 	}
 	return (*head);
 }
