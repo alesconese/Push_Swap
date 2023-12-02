@@ -6,11 +6,26 @@
 /*   By: ade-tole <ade-tole@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 19:29:16 by ade-tole          #+#    #+#             */
-/*   Updated: 2023/12/02 19:30:16 by ade-tole         ###   ########.fr       */
+/*   Updated: 2023/11/30 19:16:16 by ade-tole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// test print list
+#include <stdio.h>
+
+void	print_stack(t_node **head)
+{
+	t_node	*current = *head;
+
+	while (current)
+	{
+		printf("%d ", current->data);
+		current = current->next;
+	}
+	printf("\n");
+}
 
 int	main(int argc, char **argv)
 {
@@ -25,13 +40,13 @@ int	main(int argc, char **argv)
 		exit (1);
 	}
 	stack_a = init_stack(&stack_a, argv);
-	if (!ft_lstsorted(stack_a))
-	{
-		if (ft_lstsize(stack_a) == 2)
-			sa(&stack_a);
-		else
-			push_swap(&stack_a, &stack_b);
-	}
-	
+	print_stack(&stack_a);
+	print_stack(&stack_b);
+
+	push_swap(&stack_a, &stack_b);
+
+	print_stack(&stack_a);
+	print_stack(&stack_b);
+
 	return (0);
 }	

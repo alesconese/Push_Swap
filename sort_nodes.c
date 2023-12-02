@@ -6,7 +6,7 @@
 /*   By: ade-tole <ade-tole@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 19:09:27 by ade-tole          #+#    #+#             */
-/*   Updated: 2023/11/30 19:12:50 by ade-tole         ###   ########.fr       */
+/*   Updated: 2023/12/02 20:12:53 by ade-tole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static	void	rev_rotate_stacks(t_node **a, t_node **b, t_node *cheapest)
 	}
 	else
 	{
-		while ((size_b - cheapest->index++) && cheapest->index)
+		while ((size_b - cheapest->index) && cheapest->index++)
 		{
 			rrr(a, b);
 			cheapest->target->index++;

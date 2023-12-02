@@ -6,7 +6,7 @@
 /*   By: ade-tole <ade-tole@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 20:50:31 by ade-tole          #+#    #+#             */
-/*   Updated: 2023/11/30 19:15:19 by ade-tole         ###   ########.fr       */
+/*   Updated: 2023/12/02 19:55:24 by ade-tole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,20 @@ t_node	*ft_lstsmallest(t_node *stack)
 	return (smallest);
 }
 
-t_node	*lst_findlast(t_node *head)
+t_node	*ft_lstlast(t_node *head)
 {
 	while (head->next)
 		head = head->next;
 	return (head);
+}
+
+int	ft_lstsorted(t_node *a)
+{
+	while (a->next)
+	{
+		if (a->data > a->next->data)
+			return (0);
+		a = a->next;
+	}
+	return (1);
 }

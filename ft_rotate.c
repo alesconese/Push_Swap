@@ -6,7 +6,7 @@
 /*   By: ade-tole <ade-tole@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 20:41:31 by ade-tole          #+#    #+#             */
-/*   Updated: 2023/11/30 17:58:16 by ade-tole         ###   ########.fr       */
+/*   Updated: 2023/12/02 19:26:41 by ade-tole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static	void	rotate(t_node **head)
 {
 	t_node	*last_node;
 
-	last_node = lst_findlast(*head);
+	last_node = ft_lstlast(*head);
 	*head = (*head)->next;
 	(*head)->prev->next = NULL;
 	(*head)->prev->prev = last_node;

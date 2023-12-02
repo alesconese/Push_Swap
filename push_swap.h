@@ -6,7 +6,7 @@
 /*   By: ade-tole <ade-tole@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:31:20 by ade-tole          #+#    #+#             */
-/*   Updated: 2023/11/30 19:12:46 by ade-tole         ###   ########.fr       */
+/*   Updated: 2023/12/02 19:54:46 by ade-tole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,23 @@ typedef struct s_node
 
 t_node	*init_stack(t_node **stack, char **argv);
 
-t_node	*lst_findlast(t_node *head);
-
-int		ft_lstsize(t_node *stack);
-
-t_node	*ft_lstsmallest(t_node *stack);
-
 void	push_swap(t_node **a, t_node **b);
 
 void	sort_3(t_node **a);
 
 void	move_cheapest(t_node **a, t_node **b);
+
+t_node	*ft_lstlast(t_node *head);
+
+int		ft_lstsize(t_node *stack);
+
+t_node	*ft_lstsmallest(t_node *stack);
+
+int		ft_lstsorted(t_node *a);
+
+void	free_stack(t_node **stack);
+
+void	free_error(t_node **a);
 
 void	sa(t_node **a);
 

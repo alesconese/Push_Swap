@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ade-tole <ade-tole@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 19:29:16 by ade-tole          #+#    #+#             */
-/*   Updated: 2023/12/02 19:30:16 by ade-tole         ###   ########.fr       */
+/*   Created: 2023/12/02 19:41:58 by ade-tole          #+#    #+#             */
+/*   Updated: 2023/12/02 20:05:15 by ade-tole         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	free_stack(t_node **stack)
 {
-	t_node	*stack_a;
-	t_node	*stack_b;
+	t_node	*tmp;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc == 1)
+	if (!stack)
+		return ;
+	while (*stack)
 	{
-		write(2, "Error\n", 6);
-		exit (1);
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
 	}
-	stack_a = init_stack(&stack_a, argv);
-	if (!ft_lstsorted(stack_a))
-	{
-		if (ft_lstsize(stack_a) == 2)
-			sa(&stack_a);
-		else
-			push_swap(&stack_a, &stack_b);
-	}
-	
-	return (0);
-}	
+}
+
+void	free_error(t_node **a)
+{
+	free_stack(a);
+	write(2,"Error\n", 6);
+	exit(1);
+}
+
+
