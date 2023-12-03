@@ -57,7 +57,7 @@ static	void	rev_rotate_stacks(t_node **a, t_node **b, t_node *cheapest)
 	}
 	else
 	{
-		while ((size_b - cheapest->index) && cheapest->index++)//para el caso size 1 index 0  hay que incrementar al final para que no entre en el bucle
+		while ((size_b - cheapest->index) && cheapest->index++)
 		{
 			rrr(a, b);
 			cheapest->target->index++;
@@ -114,17 +114,17 @@ void	move_cheapest(t_node **a, t_node **b)
 
 void	sort_3(t_node **a)
 {
-	if ((*a)->data > (*a)->next->data) // 2 1 3 | 3 1 2 | 3 2 1
+	if ((*a)->data > (*a)->next->data)
 	{
-		if ((*a)->data > (*a)->next->next->data) // 3 1 2 | 3 2 1
-			ra(a); // 3 1 2 >> 1 2 3 | 3 2 1 >> 2 1 3
-		if ((*a)->data > (*a)->next->data) // 2 1 3
-			sa(a); // 2 1 3 >> 1 2 3
+		if ((*a)->data > (*a)->next->next->data)
+			ra(a);
+		if ((*a)->data > (*a)->next->data)
+			sa(a);
 	}
-	else if ((*a)->next->data > (*a)->next->next->data) // 1 3 2 | 2 3 1
+	else if ((*a)->next->data > (*a)->next->next->data)
 	{
-		rra(a); // 2 3 1 >> 1 2 3 | 1 3 2 >> 2 1 3
-		if ((*a)->data > (*a)->next->data) // 2 1 3
-			sa(a); // 2 1 3 >> 1 2 3
+		rra(a);
+		if ((*a)->data > (*a)->next->data)
+			sa(a);
 	}
 }

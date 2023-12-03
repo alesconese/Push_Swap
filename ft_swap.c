@@ -17,7 +17,8 @@ static	void	swap(t_node **head)
 	*head = (*head)->next;
 	(*head)->prev->next = (*head)->next;
 	(*head)->prev->prev = *head;
-	(*head)->next->prev = (*head)->prev;
+	if ((*head)->next)
+		(*head)->next->prev = (*head)->prev;
 	(*head)->next = (*head)->prev;
 	(*head)->prev = NULL;
 }

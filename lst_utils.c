@@ -59,3 +59,19 @@ int	ft_lstsorted(t_node *a)
 	}
 	return (1);
 }
+
+void	ft_lstaddnode(t_node **a, t_node *new_node, t_node *prev_node, int nbr)
+{
+	new_node->data = nbr;
+	new_node->next = NULL;
+	if (!*a)
+	{
+		*a = new_node;
+		new_node->prev = NULL;
+	}
+	else
+	{
+		prev_node->next = new_node;
+		new_node->prev = prev_node;
+	}
+}

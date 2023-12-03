@@ -45,6 +45,8 @@ t_node	*ft_lstsmallest(t_node *stack);
 
 int		ft_lstsorted(t_node *a);
 
+void	ft_lstaddnode(t_node **a, t_node *new_node, t_node *prev_node, int nbr);
+
 void	free_stack(t_node **stack);
 
 void	free_error(t_node **a);

@@ -48,24 +48,12 @@ t_node	*init_stack(t_node **head, char **argv)
 		arg_error(head, argv[i]);
 		nbr = ft_atol(argv[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
-		   free_error(head);
+			free_error(head);
 		repeat_error(head, (int)nbr);
-
 		new_node = (t_node *)malloc(sizeof(t_node));
 		if (!new_node)
 			return (0);
-		new_node->data = (int)nbr;
-		new_node->next = NULL;
-		if (!*head)
-		{
-			*head = new_node;
-			new_node->prev = NULL;
-		}
-		else
-		{
-			prev_node->next = new_node;
-			new_node->prev = prev_node;
-		}
+		ft_lstaddnode(head, new_node, prev_node, (int)nbr);
 		prev_node = new_node;
 	}
 	return (*head);

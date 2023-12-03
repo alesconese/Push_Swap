@@ -30,20 +30,24 @@ void	free_stack(t_node **stack)
 void	free_error(t_node **a)
 {
 	free_stack(a);
-	write(2,"Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
 void	arg_error(t_node **a, char *str)
 {
 	if (*str == '+' || *str == '-')
+	{
 		str++;
+		if (!*str)
+			free_error(a);
+	}
 	while (*str)
 	{
 		if (*str < '0' || *str > '9')
 			free_error(a);
 		str++;
-	}		
+	}
 }
 
 void	repeat_error(t_node **a, int nbr)
