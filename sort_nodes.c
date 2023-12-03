@@ -57,7 +57,7 @@ static	void	rev_rotate_stacks(t_node **a, t_node **b, t_node *cheapest)
 	}
 	else
 	{
-		while ((size_b - cheapest->index) && cheapest->index++)
+		while ((size_b - cheapest->index) && cheapest->index++)//para el caso size 1 index 0  hay que incrementar al final para que no entre en el bucle
 		{
 			rrr(a, b);
 			cheapest->target->index++;

@@ -49,6 +49,10 @@ void	free_stack(t_node **stack);
 
 void	free_error(t_node **a);
 
+void	arg_error(t_node **a, char *str);
+
+void	repeat_error(t_node **a, int nbr);
+
 void	sa(t_node **a);
 
 void	sb(t_node **b);

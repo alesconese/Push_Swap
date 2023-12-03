@@ -24,6 +24,7 @@ void	free_stack(t_node **stack)
 		free(*stack);
 		*stack = tmp;
 	}
+	*stack = NULL;
 }
 
 void	free_error(t_node **a)
@@ -33,4 +34,29 @@ void	free_error(t_node **a)
 	exit(1);
 }
 
+void	arg_error(t_node **a, char *str)
+{
+	if (*str == '+' || *str == '-')
+		str++;
+	while (*str)
+	{
+		if (*str < '0' || *str > '9')
+			free_error(a);
+		str++;
+	}		
+}
 
+void	repeat_error(t_node **a, int nbr)
+{
+	t_node	*tmp;
+
+	if (!a)
+		return ;
+	tmp = *a;
+	while (tmp)
+	{
+		if (nbr == tmp->data)
+			free_error(a);
+		tmp = tmp->next;
+	}
+}

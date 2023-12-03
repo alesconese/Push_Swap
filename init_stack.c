@@ -45,9 +45,12 @@ t_node	*init_stack(t_node **head, char **argv)
 	i = 0;
 	while (argv[++i])
 	{
+		arg_error(head, argv[i]);
 		nbr = ft_atol(argv[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
-		   free_error(head);	
+		   free_error(head);
+		repeat_error(head, (int)nbr);
+
 		new_node = (t_node *)malloc(sizeof(t_node));
 		if (!new_node)
 			return (0);

@@ -32,6 +32,5 @@ int	main(int argc, char **argv)
 		else
 			push_swap(&stack_a, &stack_b);
 	}
-	
 	return (0);
 }	
