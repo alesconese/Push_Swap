@@ -15,14 +15,19 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <limits.h>
-# include <stdbool.h>
+
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
+# define TRUE 1
+# define FALSE 0
+
+typedef int		t_bool;
 
 typedef struct s_node
 {
 	int				data;
 	int				index;
-	bool			upper_half;
+	t_bool			upper_half;
 	int				push_price;
 	struct s_node	*target;
 	struct s_node	*next;

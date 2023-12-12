@@ -36,6 +36,8 @@ void	free_error(t_node **a)
 
 void	arg_error(t_node **a, char *str)
 {
+	if (!*str)
+		free_error(a);
 	if (*str == '+' || *str == '-')
 	{
 		str++;

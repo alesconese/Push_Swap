@@ -20,11 +20,13 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc == 1)
+		return (0);
+	stack_a = init_stack(&stack_a, argv);
+	if (!stack_a)
 	{
-		write(2, "Error\n", 6);
+		free_stack(&stack_a);
 		exit (1);
 	}
-	stack_a = init_stack(&stack_a, argv);
 	if (!ft_lstsorted(stack_a))
 	{
 		if (ft_lstsize(stack_a) == 2)

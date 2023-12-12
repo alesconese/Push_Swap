@@ -23,9 +23,9 @@ static	void	set_index(t_node *stack)
 	{
 		stack->index = i;
 		if (i <= stack_half)
-			stack->upper_half = true;
+			stack->upper_half = TRUE;
 		else
-			stack->upper_half = false;
+			stack->upper_half = FALSE;
 		i++;
 		stack = stack->next;
 	}
