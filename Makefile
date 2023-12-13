@@ -12,31 +12,37 @@
 
 NAME = push_swap
 
-SRCS =  free_error.c ft_push.c ft_rev_rotate.c ft_rotate.c ft_swap.c init_stack.c \
-        lst_utils.c push_swap.c sort_nodes.c main.c
+CC = gcc
+
+FLAGS = -Wall -Wextra -Werror -MMD
 
 INCLUDES = push_swap.h
 
-FLAGS = -Wall -Wextra -Werror -MMD
+SRCS =  free_error.c ft_push.c ft_rev_rotate.c ft_rotate.c ft_swap.c init_stack.c \
+        lst_utils.c push_swap.c sort_nodes.c main.c
 
 OBJS = $(SRCS:.c=.o)
 
 DEPS = $(SRCS:.c=.d)
 
-all: $(NAME)
 
-CC = gcc
+all: makelibft $(NAME)
 
-%.o:%.c Makefile
-	$(CC) $(FLAGS) -I ./ -c $< -o $@
+%.o:%.c Makefile libft/libft.h libft/libft.a
+		$(CC) $(FLAGS) -I ./ -c $< -o $@
 
 $(NAME): $(OBJS)
 
+makelibft:
+		$(MAKE) -C libft/
+
 clean:
-	rm -rf $(OBJS) $(DEPS)
+		$(MAKE) -C libft clean
+		rm -rf $(OBJS) $(DEPS)
 
 fclean: clean
-	rm -f $(NAME)
+		$(MAKE) -C libft/ fclean
+		rm -f $(NAME)
 
 re: fclean all
 
